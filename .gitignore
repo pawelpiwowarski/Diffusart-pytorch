@@ -1,0 +1,38 @@
+.model.pth
+
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# vim swp files
+*.swp
+# caffe/pytorch model files
+*.pth
+
+*.pt
+# json
+*.json
+
+
+
+.history/
+
+dataset/
+
+wandb/
+
+
+.vscode/
+https://github.com/higumax/sketchKeras-pytorch.git
+
+.startup.sh
+
+startup.sh
+
+
+
+
+
+report.pdf

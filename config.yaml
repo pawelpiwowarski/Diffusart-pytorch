@@ -1,0 +1,31 @@
+# Description: Configuration file for training and sampling
+save_model_every_epoch: 5
+# this many times per epc
+images_per_epoch_sampled: 5
+checkpoints_to_keep: 5
+ddpm_sampling_steps: 100
+channels: 3
+diffusion_steps: 4000
+beta_1: 10**-4
+beta_T: 0.02
+target_learning_rate: 2.0e-4
+name_of_the_project: anime_diffusion
+name_of_the_dataset: pawlo2013/anime_diffusion_full
+ema_decay: 0.9999
+validation_split_size: 0.0004
+
+# Theses are the hyperparameters that can be tuned via command line
+image_size: 64
+epochs: 100
+sampling_batch_size: 16
+nr_of_columns: 4
+nr_of_rows: 4
+training_batch_size: 4
+dim_mults: [1, 2, 4, 8]
+use_convnext: True
+
+# Learning rate scheduler rules
+use_lr_scheduler: True
+use_once_cycle_lr: True
+gradient_clipping: 0.1
+use_wandb: False
