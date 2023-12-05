@@ -2,9 +2,9 @@
 
 ## 1. About the project
 
-The project's goal is to develop a neural network, that given an black and white
-sketch of an image, and some partial information about the image, can generate
-a full color image.
+The project's goal is to develop a neural network that, given a black and white
+A sketch of an image and some partial information about the image can generate
+a full-colour image.
 
 <div style="text-align: center;">
   <img src="./examples/training_triplet.png" height="500px" width="500px" />
@@ -26,18 +26,17 @@ The dataset that is to be used for the task is assumed to have three columns whe
   <br>
  <a href="https://www.tldraw.com/s/v2_c_8OhQWiVZiwMq1-VbE-bza?viewport=-2233,-1032,7715,4420&page=page:page" target="_blank"> Link to higher resolution version</a>
 </div>
-The model uses a Unet architecture. The explicit conditional information is concataned to the noisy input, and the implicit partial colour information is introdcued via cross attention.
-
+The model uses an Unet architecture. The explicit conditional information is concatenated to the noisy input, and the implicit partial colour information is introduced via cross-attention.
 ## 4. Evaluation
 
 <div style="text-align: center;">
-  <video src="./examples/output.mp4" height="500px" width="500px" />
+  <img src="./examples/output.mp4" height="500px" width="500px" />
 </div>
 <div style="text-align: center;">
-  <video src="./examples/model_predictions.png" height="500px" width="500px" />
+  <img src="./examples/model_predictions.png" height="500px" width="500px" />
 </div>
-Training of the model took around 80h of compute on single RTX 3090 chip. The averege LPIPS score on the test set (300 examples) measured to be 0.1632.
+Training of the model took around 80 hours on a single RTX 3090 chip. The average LPIPS score on the test set (300 examples) was measured to be 0.1632.
 
 ## 5. Notes
 
-This is still just a rough implementation of the ideas mentioned in the original Diffusart paper, and as such, it may contain some bugs and errors. You are welcome to propose any changes via github.
+This is still just a rough implementation of the ideas mentioned in the original Diffusart paper, and as such, it may contain some bugs and errors. You are welcome to propose any changes via GitHub.
