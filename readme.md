@@ -27,11 +27,9 @@ The dataset that is to be used for the task is assumed to have three columns whe
  <a href="https://www.tldraw.com/s/v2_c_8OhQWiVZiwMq1-VbE-bza?viewport=-2233,-1032,7715,4420&page=page:page" target="_blank"> Link to higher resolution version</a>
 </div>
 The model uses an Unet architecture. The explicit conditional information is concatenated to the noisy input, and the implicit partial colour information is introduced via cross-attention.
+
 ## 4. Evaluation
 
-<div style="text-align: center;">
-  <img src="./examples/output.mp4" height="500px" width="500px" />
-</div>
 <div style="text-align: center;">
   <img src="./examples/model_predictions.png" height="500px" width="500px" />
 </div>
