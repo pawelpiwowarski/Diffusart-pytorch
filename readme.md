@@ -39,12 +39,11 @@ The model uses an Unet architecture. The explicit conditional information is con
   <img src="./examples/model_predictions.png" height="500" width="600" />
   </p>
 
-</div>
 Training of the model took around 80 hours on a single RTX 3090 chip. The average LPIPS score on the test set (300 examples) was measured to be 0.1632 after sampling with 100 DDPM steps.
-  <p align="center">
-  <video src="./examples/output.mp4" height="500" width="500" />
-  </p>
 
+  <video src="./examples/output.mp4" height="500" width="700" />
+
+</div>
 ## 5. HuggingFace space
 
 <div style="text-align: center;">
@@ -52,9 +51,6 @@ See <a href="https://huggingface.co/spaces/pawlo2013/anime_diffusion" target="_b
 link to the HuggingFace space </a> for a demo of the model.
 </a>
 
-<p align="center">
-  <img src="./examples/example_application.png" height="500" width="500" />
-  </p>
 <div>
 
 ## 5. Notes
