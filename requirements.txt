@@ -3,7 +3,6 @@ datasets
 matplotlib 
 tqdm 
 accelerate 
-jax[cpu] 
 torchinfo 
 wandb
 ema_pytorch
@@ -11,4 +10,3 @@ lpips
 pyyaml
 diffusers
 transformers
-torch-ema

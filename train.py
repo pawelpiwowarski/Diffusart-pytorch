@@ -11,7 +11,6 @@ from tqdm import tqdm
 import os
 import glob
 from accelerate import Accelerator
-from torch_ema import ExponentialMovingAverage as EMA
 from diffusers import DDPMScheduler
 import lpips
 import argparse

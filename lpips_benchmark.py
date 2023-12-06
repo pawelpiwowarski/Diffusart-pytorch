@@ -1,8 +1,6 @@
 from datasets import load_dataset
 from torchvision import transforms
 from torch.utils.data import DataLoader
-import numpy as np
-import matplotlib.pyplot as plt
 from models.Advanced_Conditional_Unet import Unet
 import torch
 from torchvision.utils import save_image
@@ -11,7 +9,6 @@ from tqdm import tqdm
 import os
 import glob
 from accelerate import Accelerator
-from ema_pytorch import EMA
 from train_helpers import read_yaml
 from diffusers import DDPMScheduler
 import lpips
