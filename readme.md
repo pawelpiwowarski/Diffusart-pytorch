@@ -42,7 +42,6 @@ The model uses an Unet architecture. The explicit conditional information is con
 Training of the model took around 80 hours on a single RTX 3090 chip. The average LPIPS score on the test set (300 examples) was measured to be 0.1632 after sampling with 100 DDPM steps.
 
 </div>
-  <video src="./examples/output.mp4" height="500" width="700" />
 
 ## 5. HuggingFace space
 
