@@ -12,13 +12,25 @@ from accelerate import Accelerator
 from train_helpers import read_yaml
 from diffusers import DDPMScheduler
 import lpips
-
+from cleanfid import fid
 
 accelerator = Accelerator()
 device = accelerator.device
-results_folder = Path("./results/test_samples")
+results_folder = Path("./results")
+fid_results_folder = Path("./results/fid_predictions")
+ground_truth_folder = Path("./dataset/archive/full_colour/test")
 results_folder.mkdir(exist_ok=True)
+fid_results_folder.mkdir(exist_ok=True)
 
+
+# turn path into string
+fid_results_folder = str(fid_results_folder)
+ground_truth_folder = str(ground_truth_folder)
+
+fid_score = fid.compute_fid(fid_results_folder, ground_truth_folder, device=device)
+print("FID Score", fid_score)
+
+save_concats = False
 config = read_yaml("config.yaml")
 channels = config["channels"]
 image_size = config["image_size"]
@@ -145,17 +157,25 @@ for idx, batch in enumerate(dataloader):
         full_colour = torch.clamp((full_colour / 2) + 0.5, 0, 1)
         sketch = torch.clamp((sketch / 2) + 0.5, 0, 1)
 
-        images = torch.cat([sketch, implicit_conditioning, images, full_colour], dim=0)
+        for i, image in enumerate(images):
+            save_image(
+                image,
+                fid_results_folder / f"fid_prediction_{idx}_{i}.png",
+                nrow=1,
+            )
 
         # save the images as columns one column for each implicit conditioning with the epoch number as the filename
+        if save_concats:
+            images = torch.cat(
+                [sketch, implicit_conditioning, images, full_colour], dim=0
+            )
+            save_image(
+                images,
+                results_folder / f"/test_samples/sample-epoch_{idx}.png",
+                nrow=sampling_batch_size,
+            )
 
-        save_image(
-            images,
-            results_folder / f"sample-epoch_{idx}.png",
-            nrow=sampling_batch_size,
-        )
-
-        print("Saved images")
+            print("Saved images")
 
 
 print("LPIPS Loss", l_loss / len(dataloader))

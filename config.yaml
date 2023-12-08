@@ -15,14 +15,14 @@ ema_decay: 0.9999
 validation_split_size: 0.0004
 
 # Theses are the hyperparameters that can be tuned via command line
-image_size: 64
+image_size: 128
 epochs: 100
-sampling_batch_size: 16
+sampling_batch_size: 1
 nr_of_columns: 4
 nr_of_rows: 4
 training_batch_size: 4
 dim_mults: [1, 2, 4, 8]
-use_convnext: True
+use_convnext: False
 
 # Learning rate scheduler rules
 use_lr_scheduler: True
