@@ -25,7 +25,7 @@ The dataset that is to be used for the task is assumed to have three columns whe
 
 <div style="text-align: center;">
 <p align="center">
-  <img src="./examples/model_layout.png" height="700" width="500" />
+  <img src="./examples/model_layout_resized.png" height="700" width="500" />
   </p>
   <br>
  <a href="https://www.tldraw.com/s/v2_c_8OhQWiVZiwMq1-VbE-bza?viewport=-2233,-1032,7715,4420&page=page:page" target="_blank"> Link to higher resolution version</a>
@@ -38,6 +38,10 @@ The model uses an Unet architecture. The explicit conditional information is con
 <p align="center">
   <img src="./examples/model_predictions.png" height="500" width="600" />
   </p>
+
+
+https://github.com/pawelpiwowarski/Diffusart-pytorch/assets/43449172/ff1fe2bb-4341-4561-8994-8e32f661c724
+
 
 Training of the model took around 80 hours on a single RTX 3090 chip. The average LPIPS score on the test set (300 examples) was measured to be 0.1632 after sampling with 100 DDPM steps.
 
